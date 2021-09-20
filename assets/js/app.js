@@ -1,7 +1,7 @@
 console.log('JavaScript is working!')
 
 function drawDiamond() {
-    const canvas = document.getElementById('canvas');
+    const canvas = getElement();
     let color;
     if (canvas.getContext) {
         const x = 100;
@@ -12,6 +12,11 @@ function drawDiamond() {
         color = ('#0089ca');
         sketch(x, y, w, h, ctx, color);
     }
+}
+
+function getElement() {
+    //3 methods needed so this is it :)
+    return document.getElementById('diamond')
 }
 
 function sketch(x, y, w, h, ctx, color) {
@@ -29,14 +34,12 @@ function sketch(x, y, w, h, ctx, color) {
     ctx.lineTo(x + w, y);
     ctx.fill();
 
-    // Upper left triangle
     ctx.beginPath();
     ctx.moveTo(x + w / 4, y - 0.3 * h);
     ctx.lineTo(x, y);
     ctx.lineTo(x + w / 2, y);
     ctx.fill();
 
-    // centre inverted triangle
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(x + w / 4, y - 0.3 * h);
@@ -44,7 +47,6 @@ function sketch(x, y, w, h, ctx, color) {
     ctx.lineTo(x + 0.75 * w, y - 0.3 * h);
     ctx.fill();
 
-    //Upper left triangle.
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(x + 0.75 * w, y - 0.3 * h);
