@@ -1,56 +1,17 @@
 console.log('JavaScript is working!')
+removeFromString();
 
-function drawDiamond() {
-    const canvas = getElement();
-    let color;
-    if (canvas.getContext) {
-        const x = 100;
-        const y = 100;
-        const w = 200;
-        const h = 200;
-        const ctx = canvas.getContext('2d');
-        color = ('#0089ca');
-        sketch(x, y, w, h, ctx, color);
+function isItEven() {
+    const number = 2;
+    if (number % 2 === 0) {
+        console.log("number is even")
+    } else {
+        console.log("number is not even")
     }
 }
 
-function getElement() {
-    //3 methods needed so this is it :)
-    return document.getElementById('diamond')
-}
-
-function sketch(x, y, w, h, ctx, color) {
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x + w / 2, y + 0.7 * h);
-    ctx.lineTo(x + w / 2, y);
-    ctx.fill();
-
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x + w / 2, y);
-    ctx.lineTo(x + w / 2, y + 0.7 * h);
-    ctx.lineTo(x + w, y);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.moveTo(x + w / 4, y - 0.3 * h);
-    ctx.lineTo(x, y);
-    ctx.lineTo(x + w / 2, y);
-    ctx.fill();
-
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x + w / 4, y - 0.3 * h);
-    ctx.lineTo(x + w / 2, y);
-    ctx.lineTo(x + 0.75 * w, y - 0.3 * h);
-    ctx.fill();
-
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x + 0.75 * w, y - 0.3 * h);
-    ctx.lineTo(x + w / 2, y);
-    ctx.lineTo(x + w, y);
-    ctx.fill();
+function removeFromString() {
+    const string = "Programming is not so cool";
+    const removed = string.replace("not ", "")
+    console.log(removed)
 }
