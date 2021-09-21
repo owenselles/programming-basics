@@ -1,56 +1,24 @@
 console.log('JavaScript is working!')
 
-function drawDiamond() {
-    const canvas = getElement();
-    let color;
-    if (canvas.getContext) {
-        const x = 100;
-        const y = 100;
-        const w = 200;
-        const h = 200;
-        const ctx = canvas.getContext('2d');
-        color = ('#0089ca');
-        sketch(x, y, w, h, ctx, color);
+countdown();
+
+// Countdown
+function countdown() {
+    let highestNumber = 400;
+    let lowestNumber = 100;
+    for (let i = highestNumber; i > lowestNumber; i--) {
+        if (i % 3 === 0) {
+            console.log(i)
+        }
     }
 }
 
-function getElement() {
-    //3 methods needed so this is it :)
-    return document.getElementById('diamond')
-}
-
-function sketch(x, y, w, h, ctx, color) {
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x + w / 2, y + 0.7 * h);
-    ctx.lineTo(x + w / 2, y);
-    ctx.fill();
-
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x + w / 2, y);
-    ctx.lineTo(x + w / 2, y + 0.7 * h);
-    ctx.lineTo(x + w, y);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.moveTo(x + w / 4, y - 0.3 * h);
-    ctx.lineTo(x, y);
-    ctx.lineTo(x + w / 2, y);
-    ctx.fill();
-
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x + w / 4, y - 0.3 * h);
-    ctx.lineTo(x + w / 2, y);
-    ctx.lineTo(x + 0.75 * w, y - 0.3 * h);
-    ctx.fill();
-
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(x + 0.75 * w, y - 0.3 * h);
-    ctx.lineTo(x + w / 2, y);
-    ctx.lineTo(x + w, y);
-    ctx.fill();
+calculateArray()
+// get sum of array
+function calculateArray() {
+    let niceNumber = [2, 4, 8, 9, 12, 13];
+    const sum = niceNumber.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+    console.log(sum);
 }
