@@ -1,5 +1,4 @@
 happyNewYear(2021);
-
 // Countdown
 async function happyNewYear(year) {
     const timer = ms => new Promise(res => setTimeout(res, ms))
@@ -11,10 +10,13 @@ async function happyNewYear(year) {
 }
 
 factorial(5)
-
 // get sum of array
 function factorial(num) {
-
+    let finalNumber = 1;
+    for (i = 1; i <= num; i++) {
+        finalNumber = finalNumber * i;
+    }
+    console.log(finalNumber);
 }
 
 checkForACharacterInSentence("Test sentence", "t")
