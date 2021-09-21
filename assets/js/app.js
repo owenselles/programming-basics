@@ -1,24 +1,26 @@
-console.log('JavaScript is working!')
-
-countdown();
+happyNewYear(2021);
 
 // Countdown
-function countdown() {
-    let highestNumber = 400;
-    let lowestNumber = 100;
-    for (let i = highestNumber; i > lowestNumber; i--) {
-        if (i % 3 === 0) {
-            console.log(i)
-        }
+async function happyNewYear(year) {
+    const timer = ms => new Promise(res => setTimeout(res, ms))
+    for (let i = 10; i > 0; i--) {
+        console.log(i)
+        await timer(1000)
     }
+    console.log(`Happy new ${year}!!!`)
 }
 
-calculateArray()
+factorial(5)
+
 // get sum of array
-function calculateArray() {
-    let niceNumber = [2, 4, 8, 9, 12, 13];
-    const sum = niceNumber.reduce(function (a, b) {
-        return a + b;
-    }, 0);
-    console.log(sum);
+function factorial(num) {
+
+}
+
+checkForACharacterInSentence("Test sentence", "t")
+
+// Check for character in the sentence
+function checkForACharacterInSentence(sentence, character) {
+    const count = sentence.split(new RegExp(character, "gi")).length - 1
+    console.log(`Sentence contains "${character}" ${count} times!`)
 }
