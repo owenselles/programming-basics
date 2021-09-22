@@ -1,28 +1,41 @@
-happyNewYear(2021);
-// Countdown
-async function happyNewYear(year) {
-    const timer = ms => new Promise(res => setTimeout(res, ms))
-    for (let i = 10; i > 0; i--) {
-        console.log(i)
-        await timer(1000)
-    }
-    console.log(`Happy new ${year}!!!`)
+randomReturn();
+
+// Return random element from array
+async function randomReturn() {
+    const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12];
+    const number = Math.floor(Math.random() * lapRounds.length);
+    console.log(lapRounds[number])
 }
 
-factorial(5)
-// get sum of array
-function factorial(num) {
-    let finalNumber = 1;
-    for (i = 1; i <= num; i++) {
-        finalNumber = finalNumber * i;
+printRecords()
+
+// print all records from array
+function printRecords() {
+    const allMyRecords = [
+        [
+            "The Who - Pinball Wizard",
+            "Rolling Stones - Exile on main street",
+            "Police - Message in a bottle"
+        ],
+        [
+            "De Dijk - Alle 40 Goed",
+            "Het Goede Doel - Belgie",
+            "Doe Maar - skunk"
+        ]
+    ];
+    for (let i = 0; i < allMyRecords.length; i++) {
+        for (let k = 0; k < allMyRecords[i].length; k++) {
+            console.log(allMyRecords[i][k])
+        }
     }
-    console.log(finalNumber);
 }
 
-checkForACharacterInSentence("Test sentence", "t")
-
-// Check for character in the sentence
-function checkForACharacterInSentence(sentence, character) {
-    const count = sentence.split(new RegExp(character, "gi")).length - 1
-    console.log(`Sentence contains "${character}" ${count} times!`)
+filteredLapRoundsWithForLoop()
+// Filter all numbers from array that are smaller than 4
+function filteredLapRoundsWithForLoop() {
+    const lapRounds = [2.99, 3.00, 3.01, 4.01, 2.79, 2.88, 3.10, 4.12];
+    const lessThanFour = lapRounds.filter(function (number) {
+        return number < 4;
+    });
+    console.log(lessThanFour);
 }
