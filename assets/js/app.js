@@ -1,8 +1,4 @@
-formatObject()
-
 // format object into an array
-function formatObject() {
-
     const drivers = [{
         driver: 'Max',
         team: 'Redbull',
@@ -12,7 +8,13 @@ function formatObject() {
         team: 'Mercedes',
         lapRounds: [55.90, 63.10, 63.1, 53.01, 64.79, 52.80, 52.09, 54.11]
     }]
-    console.log(drivers[0].driver)
+
+averageLapTime(drivers);
+function averageLapTime(drivers) {
+    const sum = drivers[0].lapRounds.reduce((a, b) => a + b, 0);
+    const avg = (sum / drivers[0].lapRounds.length) || 0;
+    console.log(`The sum is: ${sum}. The average is: ${avg}.`);
+
 }
 
 myProfession()
@@ -63,3 +65,4 @@ function salaryPerHour() {
         console.log(teachers[i].name + "'s salary is €" + teachers[i].salary / teachers[i].hoursPerWeek)
     }
 }
+
